@@ -115,6 +115,31 @@
     }
 }
 
+
+@media (max-width: 330px) {
+
+    .call-to-action-container {
+        .navigation {
+            .links {
+                li {
+                    margin: 0 1px;
+                }
+            }
+        }
+    }
+    
+    .blog-header {
+        .navigation {
+            .links {
+                li {
+                    a{
+                        padding: 8px 16px;    
+                    }
+                }
+            }
+        }
+    }
+}
 .navigation {
     .links {
         margin: 0;
