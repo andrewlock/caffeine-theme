@@ -13,15 +13,16 @@ $red                   : #7C221A;
 $brown                 : #85715F;
 $slate-gray            : #39424B;
 $slate-green           : #56817A;
+$slate-blue            : #206DA8;
 $midnight-blue         : #222F38;
 
-$primary-color         : $slate-green;
+$primary-color         : $slate-blue;
 $secondary-color       : $slate-gray;
 
 $cover-secondary       : rgba(#5f2c82, .1);
-$cover-primary         : rgba(#49a09d, .2);
+$cover-primary         : rgba(#28AAFF, .2);
 
-$link-color            : #2895F1;
+$link-color            : #288900;
 $pre-hover-color       : lighten($primary-color, 15%);
 $hover-color           : $primary-color;
 $hover-color-inverse   : $slate-white;
