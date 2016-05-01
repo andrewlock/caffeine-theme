@@ -53,7 +53,7 @@ src = {
     css: {
         main: "assets/css/" + dist.name + ".css",
         vendor: [
-            "assets/vendor/prism/themes/prism-okaidia.css"
+            "assets/vendor/prism-themes/themes/prism-ghcolors.css"
         ]
     },
     fonts: {
