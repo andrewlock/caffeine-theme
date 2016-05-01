@@ -80,10 +80,10 @@ $(function() {
         if (window.mailchimp_url) {
             $("body").subbscribe({
                 title: "Never miss a post!",
-                text: "Stay up to the date with the latest posts from Caffeine Coding!",
-                name: "<a href='https://www.facebook.com/caffeinecoding' target='_blank'>@caffeinecoding</a>",
-                color: "#56817A",
-                thumbnail: "http://i.imgur.com/39erIwp.png",
+                text: "Stay up to the date with the latest from .Net Escapades!",
+                name: "Andrew Lock | .Net Escapades",
+                color: "#206DA8",
+                thumbnail: "/assets/img/icons/apple/apple-touch-icon-180x180.png?",
                 list: "MailChimp",
                 url : window.mailchimp_url
             });
