@@ -106,13 +106,17 @@ em {
 }
 
 blockquote {
+    margin: 1.6em 0;
+    padding: 0 1.6em 0 1.6em;
+    border-left: 0.6em solid $gray-light;;
+    
     > p {
-        margin: 40px 48px;
+        margin: 40px 0;
         font-family: $quote-font;
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
         font-style: italic;
-        text-align: center;
+        text-align: left;
         word-wrap: break-word;
     }
 }
@@ -269,7 +273,13 @@ main {
 }
 
 hr {
-    border: none;
+    box-sizing: content-box;
+    display: block;
+    margin: 3.2em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $gray-light;
 }
 
 .hide {
