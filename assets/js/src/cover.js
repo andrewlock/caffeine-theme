@@ -79,9 +79,9 @@ $(function() {
 
         if (window.mailchimp_url) {
             $("body").subbscribe({
-                title: "Never miss a post!",
-                text: "Stay up to the date with the latest from .Net Escapades!",
-                name: "Andrew Lock | .Net Escapades",
+                title: "Andrew Lock | .Net Escapades",
+                text: "Stay up to the date with the latest posts!",
+                name: "Andrew Lock",
                 color: "#206DA8",
                 thumbnail: "/assets/img/icons/apple/apple-touch-icon-180x180.png?",
                 list: "MailChimp",
