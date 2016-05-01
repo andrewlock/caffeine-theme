@@ -92,9 +92,10 @@
             border-bottom: 1px dashed $primary-color;
         }
         &:hover {
-            color: $slate-white;
-            border-color: $hover-color;
-            background: $primary-color;
+            color: $hover-color;
+        }
+        &:hover::after {
+            border-bottom: 1px solid $hover-color;
         }
         &:hover,
         &:active {
@@ -128,9 +129,10 @@
             border-bottom: 1px dashed $primary-color;
         }
         &:hover {
-            color: $slate-white;
-            border-color: $hover-color;
-            background: $primary-color;
+            color: $hover-color;
+        }
+        &:hover::after {
+            border-bottom: 1px solid $hover-color;
         }
         &:hover,
         &:active {

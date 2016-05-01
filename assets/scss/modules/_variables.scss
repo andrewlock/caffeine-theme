@@ -22,9 +22,9 @@ $secondary-color       : $slate-gray;
 $cover-secondary       : rgba(#5f2c82, .1);
 $cover-primary         : rgba(#28AAFF, .2);
 
-$link-color            : #288900;
+$link-color            : $primary-color;
 $pre-hover-color       : lighten($primary-color, 15%);
-$hover-color           : $primary-color;
+$hover-color           : #288900;
 $hover-color-inverse   : $slate-white;
 
 $divider-color         : rgba(255, 255, 255, .14);
