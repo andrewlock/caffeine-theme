@@ -51,9 +51,12 @@ $margin-h5             : $margin-h4 * 0.8;
 $margin-h6             : $margin-h5 * 0.8;
 
 $font-title            : $unit * 2;
+$line-height-extra     : $unit * 0.5;
 $font-h1               : $font-title * 1.1;
 $font-h2               : $font-title * 0.85;
+$font-h2-line-height   : $font-h2 + $line-height-extra;
 $font-h3               : $font-h2 * 0.85;
+$font-h3-line-height   : $font-h3 + $line-height-extra;
 $font-h4               : $font-h3 * 0.85;
 $font-h5               : $font-h4 * 0.85;
 $font-h6               : $font-h5 * 0.85;
