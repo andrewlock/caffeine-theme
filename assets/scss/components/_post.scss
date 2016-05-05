@@ -82,6 +82,17 @@
     a {
         padding: 0 4px;
         transition: all .5s;
+        
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
         &::after {
             position: absolute;
             bottom: -.5px;
@@ -148,6 +159,39 @@
             vertical-align: middle;
             border: none;
             box-shadow: none;
+        }
+    }
+    // ------------------------------
+    // Github style tables
+    // ------------------------------
+    .table-wrapper {
+        overflow-x: scroll;
+            table {
+            display: table;
+            width: auto;
+            margin: 16px auto;
+            overflow: auto;
+            word-break: normal;
+            word-break: keep-all;
+            
+            th, 
+            td {
+                padding: 6px 13px;
+                border: 1px solid #ddd;
+            }
+            
+            th{
+                font-weight: bold;
+            }
+            
+            tr {
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+            
+                &:nth-child(2n) {
+                    background-color: #f8f8f8;
+                }
+            }
         }
     }
 }
