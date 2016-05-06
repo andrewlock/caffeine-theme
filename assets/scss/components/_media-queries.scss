@@ -9,7 +9,9 @@
     }
 
     .post .post-card,
-    .post .post-related,
+    .post .post-related {
+        max-width: $container-medium-width;
+    }
     .container-wrapper {
         max-width: $container-large-width;
     }
