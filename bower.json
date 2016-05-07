@@ -30,7 +30,8 @@
     "bourbon": "~4.2.6",
     "toastr": "^2.1.2",
     "js-cookie": "^2.1.1",
-    "prism-themes" : "git://github.com/PrismJS/prism-themes.git"
+    "prism-themes" : "git://github.com/PrismJS/prism-themes.git",
+    "fontfaceobserver": "^1.7.1"
   },
   "ignore": [
     "**/.*",
