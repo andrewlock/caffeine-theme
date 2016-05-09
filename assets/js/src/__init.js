@@ -5,7 +5,7 @@ $(function() {
         openHash = "#open";
 
     window.CaffeineTheme = CaffeineTheme = {
-        version: "3.0.0",
+        version: "3.0.1",
         search: {
             container: function() {
                 return $("#results");
@@ -34,6 +34,17 @@ $(function() {
             }
 
         },
+        redirect: function (pageNum) {
+            var redirectUrl = "";
+
+            if (pageNum > 1) {
+                redirectUrl += "/page/" + pageNum + "/#open";
+            } else {
+                redirectUrl += "/#open";
+            }
+
+            window.location.href = redirectUrl;
+        },
         isOpen: function () {
             return location.hash === openHash;
         },
@@ -45,6 +56,22 @@ $(function() {
         },
         close: function() {
              window.history.replaceState(null, null, "#");
+        },
+        getLastPageNum: function() {
+            var pageNum = "";
+
+            if (window.store && window.store.enabled) {
+                pageNum = window.store.get("pageNum") || "";
+            }
+
+            return pageNum;
+        },
+        setLastPageNum: function() {
+            var pageNum = $("#pageNum").text() || "";
+
+            if (pageNum.length > 0 && window.store && window.store.enabled) {
+                window.store.set("pageNum", pageNum);
+            }
         },
         readTime: function() {
             var DateInDays;
@@ -91,17 +118,19 @@ $(function() {
                 var message = window.notificationOptions.message || "",
                     type = window.notificationOptions.type || "info",
                     isShownOnce = window.notificationOptions.isShownOnce || true,
-                    notificationCookie = "notification",
-                    cookieValue = window.Cookies.get(notificationCookie),
-                    setNotificationCookie;
+                    notificationStore = "notification",
+                    storeValue = "",
+                    setNotificationStore;
 
-                setNotificationCookie = function () {
-                    if (cookieValue) {
-                        window.Cookies.remove(notificationCookie);
-                    }
+                setNotificationStore = function () {
+                    if (window.store && window.store.enabled) {
+                         if (storeValue) {
+                             window.store.remove(notificationStore);
+                        }
 
-                    if (isShownOnce) {
-                        window.Cookies.set(notificationCookie, message);
+                        if (isShownOnce) {
+                            window.store.set(notificationStore, message);
+                        }
                     }
                 };
 
@@ -114,12 +143,16 @@ $(function() {
                     "preventDuplicates": true,
                     "onclick": null,
                     "escapeHtml": window.notificationOptions.escapeHtml || false,
-                    "timeOut": window.notificationOptions.timeOut || "20000",
-                    "extendedTimeOut": window.notificationOptions.extendedTimeOut ||  "5000",
-                    "onHidden": setNotificationCookie
-                  };
+                    "timeOut": window.notificationOptions.timeOut || "25000",
+                    "extendedTimeOut": window.notificationOptions.extendedTimeOut ||  "10000",
+                    "onHidden": setNotificationStore
+                };
 
-                if (cookieValue === undefined || cookieValue !== encodeURI(message)) {
+                if (window.store && window.store.enabled) {
+                    storeValue = window.store.get(notificationStore) || "";
+                }
+
+                if (storeValue === undefined || storeValue !== message) {
                     window.toastr[type](message);
                 }
             }
