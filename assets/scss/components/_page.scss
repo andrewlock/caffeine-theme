@@ -59,3 +59,21 @@
         }
     }
 }
+
+.post-footer {
+    text-align: center;
+    
+    hr {
+        margin: 1.5em;
+    }
+    .social{
+        margin-top: 5px;
+        &.item a{
+            color: $pre-hover-color;
+        
+            &:hover{
+                color: $hover-color;
+            }
+        }
+    }
+}
