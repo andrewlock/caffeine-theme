@@ -4,7 +4,7 @@
   "homepage": "https://github.com/andrewlock/caffeine-theme",
   "version": "2.1.0",
   "authors": [
-    "Kelyvin <kelvinnuci@gmail.com>"
+    "Andrew Lock <sock@andrewlock.net>"
   ],
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "bourbon": "~4.2.6",
     "toastr": "^2.1.2",
     "prism-themes" : "git://github.com/PrismJS/prism-themes.git",
-    "store-js": "^1.3.20"
+    "store-js": "^1.3.20",
+    "fontfaceobserver": "^1.7.1"
   },
   "ignore": [
     "**/.*",

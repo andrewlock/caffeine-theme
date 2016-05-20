@@ -1,21 +1,23 @@
 {
   "name": "caffeine-theme",
   "description": "Minimalist and Elegant theme for Ghost",
-  "homepage": "https://github.com/kelyvin/caffeine-theme",
-  "version": "3.0.1",
+  "homepage": "https://github.com/andrewlock/caffeine-theme",
+  "version": "3.1.0",
   "author": {
-    "name": "Kelyvin",
-    "url": "https://github.com/kelyvin"
+    "name": "Andrew Lock",
+    "url": "https://github.com/andrewlock"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kelyvin/caffeine-theme"
+    "url": "https://github.com/andrewlock/caffeine-theme"
   },
   "scripts": {
-    "test": "gulp build"
+    "start": "npm install && gulp",
+    "test": "gulp build",
+    "postinstall": "bower install"
   },
   "bugs": {
-    "url": "https://github.com/kelyvin/caffeine-theme/issues"
+    "url": "https://github.com/andrewlock/caffeine-theme/issues"
   },
   "keywords": [
     "elegant",

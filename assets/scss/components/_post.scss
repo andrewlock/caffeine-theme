@@ -128,8 +128,9 @@
     }
 
     a {
-        padding: 0 4px;
         transition: all .5s;
+        text-decoration: underline;
+
         &::after {
             position: absolute;
             bottom: -.5px;
@@ -137,6 +138,7 @@
             width: 100%;
             height: 0;
             content: "";
+
         }
         &:hover {
             color: $hover-color;
@@ -144,9 +146,10 @@
         &:hover::after {
             border-bottom: 1px solid $hover-color;
         }
+
         &:hover,
-        &:active {
-            outline: 0;
+        &:visited {
+            color: $gray-dark;
         }
     }
 
