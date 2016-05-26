@@ -45,7 +45,7 @@
 
     #post-title {
         margin-top: 60px;
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
     .post-header {
@@ -57,6 +57,13 @@
                 }
             }
         }
+    }
+}
+
+.page-credits{    
+    #post-title {
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 }
 
