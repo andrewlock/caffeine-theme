@@ -58,7 +58,8 @@ src = {
     css: {
         main: "assets/css/" + dist.name + ".css",
         vendor: [
-            "assets/vendor/prism/themes/prism.css"
+            "assets/vendor/prism/themes/prism.css",
+            "assets/vendor/prism-themes/themes/prism-vs.css"
         ]
     },
     fonts: {
