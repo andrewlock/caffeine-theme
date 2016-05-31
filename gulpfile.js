@@ -51,6 +51,7 @@ src = {
             "assets/vendor/reading-time/build/readingTime.min.js",
             "assets/vendor/prism/prism.js",
             "assets/vendor/prism/components/prism-csharp.min.js",
+            "assets/vendor/prism/components/prism-json.min.js",
             "assets/vendor/toastr/toastr.min.js",
             "assets/vendor/store-js/store.min.js"
         ]
