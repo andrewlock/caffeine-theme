@@ -54,6 +54,7 @@ src = {
             "assets/vendor/prism/components/prism-json.min.js",
             "assets/vendor/prism/components/prism-yaml.min.js",
             "assets/vendor/prism/components/prism-powershell.min.js",
+            "assets/vendor/prism/components/prism-bash.min.js",
             "assets/vendor/toastr/toastr.min.js",
             "assets/vendor/store-js/store.min.js"
         ]
