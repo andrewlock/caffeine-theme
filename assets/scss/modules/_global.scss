@@ -182,6 +182,7 @@ pre {
         font-family: $code-font;
         font-size: 12px;
         color: $gray-dark;
+        white-space: pre-wrap;
     }
 }
 

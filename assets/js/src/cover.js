@@ -100,13 +100,19 @@ $(function() {
     $homeButton.click(_defaultLogoNavEvent);
     $(".open-link").click(_defaultLogoNavEvent);
 
+    // "Home" page setup
     if (CaffeineTheme.is("page", "home")) {
         
         event.preventDefault();
         CaffeineTheme.showIndexPage();
         
         if (!CaffeineTheme.isOpen()) {
-            return _expandCover();
+            if (!window.disableCover) {
+                CaffeineTheme.hideIndexPage();
+                return _expandCover();
+            } else {
+                CaffeineTheme.open();
+            }
         }
     }
 });

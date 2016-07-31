@@ -1,6 +1,6 @@
-# Caffeine Theme [![Codeship Status for kelyvin/caffeine-theme](https://codeship.com/projects/2670e310-6805-0133-8838-460d97cd31f0/status?branch=master)](https://codeship.com/projects/114177)
+# Caffeine Theme [![Build Status](https://travis-ci.org/kelyvin/caffeine-theme.svg?branch=master)](https://travis-ci.org/kelyvin/caffeine-theme)
 
-![](http://i.imgur.com/a2uhb1ol.jpg)
+![Caffeine Coding](http://i.imgur.com/NiugCmL.png)
 
 ## Introduction
 
@@ -9,6 +9,32 @@
 **The theme is super easy to configure,** with almost no code change necessary! Simply follow the customization options [below](#customizations).
 
 You can check out the theme in action on my official blog [Caffeine Coding](https://www.caffeinecoding.com)
+
+
+### Table of Contents
+
+* [Theme Features](#theme-features)
+* [Installation](#installation)
+* [Customizations](#customizations)
+    * [Header Icon](#header-icon)
+    * [Favicons](#favicons)
+    * [Tags Overlay](#tags-overlay)
+    * [Google Analytics](#google-analytics)
+    * [Disqus Comments](#disqus-comments)
+    * [Masonry Grid](#masonry-grid-layout-beta)
+    * [Mailchimp](#mailchimp)
+    * [Toast Notifications](#toast-notifications)
+    * [Cover](#cover)
+    * [Links](#links)
+    * [Browser Compatibility Page](#browser-compatibility-page)
+    * [Custom Static Pages](#custom-static-pages)
+    * [Social Networks](Social Networks)
+* [Developing and Contributing](#developing-and-contributing)
+    * [Building](#building)
+    * [Colors](#colors)
+    * [Preparing for Production](#preparing-for-production)
+
+
 
 ## Theme Features
 
@@ -22,7 +48,7 @@ The following is a list of key differences that include, but are not limited to:
  - **Scroll reveal** support for Google+ like rendering
  - **Mailchimp** integration and support for email subscriptions
  - **Font-awesome** support to use the latest icons from Font Awesome
- - **Page notifications** support to keep your users informed when they hit your home page
+ - **Toast notifications** support to keep your users informed when they hit your home page
  - **Prismjs** support for syntax highlighting in your posts
  - Special browser compatibility page for IE9 and below.
  - Mobile-first driven experience
@@ -75,52 +101,6 @@ As mentioned earlier, this theme is very easily configurable to suit your needs.
 ### General Settings
 Make sure to set up some of your default settings within your Ghost Admin panel → `General`. By setting your blog title, description, cover, logo, and posts per page, you will be able to maximize the capabilities of this theme.
 
-### Google Analytics
-
-Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
-
-```html
-<script>
-var ga_id = 'UA-YOUR_ID_HERE';
-</script>
-```
-
-### Comments
-
-Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
-
-```html
-<script>
-var disqus_shortname = 'YOUR_DISQUS_SHORTCUT_HERE';
-</script>
-```
-
-### Cover title
-
-By default, the title that you see in the cover page of your blog is extracted from your blog settings (Admin panel → Blog Title).
-
-If you want to customize it, you can do it like so:
-
-Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
-
-```html
-<script>
-var profile_title = 'Caffeine Theme';
-</script>
-```
-
-### Cover subtitle
-
-The purpose of the subtitle is to describe your bio in a quick phrase.
-
-Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
-
-```html
-<script>
-var profile_resume ='Software Engineer';
-</script>
-```
-
 ### Header icon
 
 On every page there is an icon on the upper-left hand corner that will open the splash screen. If you'd rather set your own icon, overwrite the `icon.png` within `assets/img/icon`. Or, if you rather not use an icon, you can simply open up the `partials/header.hbs` and uncomment the following line:
@@ -151,6 +131,26 @@ var tag_names = ['code', 'career'];
 ```
 
 *Note: Ghost currently does not have a "production" ready feature to easily find your list of tags, so this is the temporary solution until that feature is more broadly supported.*
+
+### Google Analytics
+
+Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
+
+```html
+<script>
+var ga_id = 'UA-YOUR_ID_HERE';
+</script>
+```
+
+### Disqus Comments
+
+Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
+
+```html
+<script>
+var disqus_shortname = 'YOUR_DISQUS_SHORTCUT_HERE';
+</script>
+```
 
 ### Masonry Grid Layout (beta)
 By default this theme will create a two column grid layout if you decided to import the Masonry package as described in the [instructions above](add-jquery-and-other-libraries). If you didn't import the package, the theme will render a single column grid.
@@ -200,7 +200,7 @@ var mailchimpOptions = {
 };
 ```
 
-### Notifications
+### Toast Notifications
 
 This theme has support with [toastr](https://github.com/CodeSeven/toastr) to create custom notifications on your blog for your users to see. You can configure the notification through the Ghost admin panel, as seen in the example below:
 
@@ -221,15 +221,53 @@ The `type` will define the type of notification to render, the `message` will di
 
 **Note**: `isShownOnce` will be determined by setting a value in local storage that is set to the `message`. So if your message changes, the local storage value will be set to the new message. We determine whether to show the notification based on whether the current notification message is equal to their last visit.
 
+### Cover
+
+Go to Ghost Admin panel → General → `Blog Cover`
+
+#### Cover title
+
+By default, the title that you see in the cover page of your blog is extracted from your blog settings (Admin panel → Blog Title).
+
+If you want to customize it, you can do it like so:
+
+Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
+
+```html
+<script>
+var profile_title = 'Caffeine Theme';
+</script>
+```
+
+#### Cover subtitle
+
+The purpose of the subtitle is to describe your bio in a quick phrase.
+
+Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
+
+```html
+<script>
+var profile_resume ='Software Engineer';
+</script>
+```
+
+#### Disable Cover
+
+If you'd like to disable the cover and go directly to the home page, you can simply add the following code to the code injection.
+
+Go to Ghost Admin panel → `Code Injection` → `Blog Header` and add:
+
+```html
+<script>
+var disableCover = true;
+</script>
+```
+
 ### Links
 
 Go to Ghost Admin panel → `Navigation` and add/edit items.
 
 The "Home" link is always included by default, so you don't need to add it manually.
-
-### Cover
-
-Go to Ghost Admin panel → General → `Blog Cover`
 
 ### Browser Compatibility Page
 
@@ -244,8 +282,8 @@ Check out the official [documentation](http://themes.ghost.org/docs/page-context
 ### Social Networks
 This one isn't as easily to customize through the Ghost admin. So you'll have to get your hands a litle dirty. You can edit the file `partials/social.hbs` with all the social networks you want to show, following the same HTML markup pattern that you see. You can find the right social icon for you by searching through [Font Awesome's icon list](http://fontawesome.io/icons/).
 
-## Development
-There may be a situation where you want to pull the code and modify the code directly. You may do this to simply change the base colors, add additional features, or even help me fix some bugs! Follow the instructions below on how to get started with this.
+## Developing and Contributing
+There may be a situation where you want to pull the code and modify the code directly, or you may even want to contribute! You may do this to simply change the base colors, add additional features, or even help me fix some bugs! Follow the instructions below on how to get started with this.
 
 ### File System
 
@@ -256,38 +294,38 @@ The code for the theme is divided into 3 main sections: static files (as HTML an
 ├── LICENSE.md
 ├── README.md
 ├── assets
-│   ├── css
-│   │   └── caffeine-theme.css # the production css
-│   ├── fonts
-│   ├── img # favicons and cover image
-│   ├── js
-│   │   ├── src
-│   │   │   ├── __init.js
-│   │   │   ├── cover.js
-│   │   │   ├── main.js
-│   │   │   └── search.js
-│   │   └── caffeine-theme.js # the production js
-│   └── scss
-│   │   ├── components # specific stuff
-│   │   │   ├── _aside.scss
-│   │   │   ├── _loading.scss
-│   │   │   ├── _media-queries.scss
-│   │   │   ├── _page-error.scss
-│   │   │   ├── _pagination.scss
-│   │   │   ├── _post.scss
-│   │   │   └── _search.scss
-│   │   ├── modules # basic stuff
-│   │   │   ├── _buttons.scss
-│   │   │   ├── _effects.scss
-│   │   │   ├── _fonts.scss
-│   │   │   ├── _forms.scss
-│   │   │   ├── _global.scss
-│   │   │   ├── _grid.scss
-│   │   │   ├── _mixins.scss
-│   │   │   ├── _reset.scss
-│   │   │   └── _variables.scss
-│   │   └── caffeine-theme.scss # main file to create the CSS
-|   └── vendor # frontend dependencies
+│   ├── css
+│   │   └── caffeine-theme.css //production css
+│   ├── fonts
+│   ├── img //favicons and cover image
+│   ├── js
+│   │   ├── src //all the code that will be compiled, concatenated, and minified
+│   │   │   ├── __init.js
+│   │   │   ├── cover.js
+│   │   │   ├── main.js
+│   │   │   └── search.js
+│   │   └── caffeine-theme.js //production js
+│   └── scss //all the sass stylsheets that will be bundled together
+│   │   ├── components //stylesheets for specific components
+│   │   │   ├── _aside.scss
+│   │   │   ├── _loading.scss
+│   │   │   ├── _media-queries.scss
+│   │   │   ├── _page-error.scss
+│   │   │   ├── _pagination.scss
+│   │   │   ├── _post.scss
+│   │   │   └── _search.scss
+│   │   ├── modules //stylesheets for generic modules
+│   │   │   ├── _buttons.scss
+│   │   │   ├── _effects.scss
+│   │   │   ├── _fonts.scss
+│   │   │   ├── _forms.scss
+│   │   │   ├── _global.scss
+│   │   │   ├── _grid.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _reset.scss
+│   │   │   └── _variables.scss
+│   │   └── caffeine-theme.scss //parent sass file
+|   └── vendor //bower dependencies
 ├── bower.json
 ├── default.hbs
 ├── error.hbs
@@ -295,16 +333,16 @@ The code for the theme is divided into 3 main sections: static files (as HTML an
 ├── index.hbs
 ├── node_modules
 ├── package.json
-├── partials # different partials view
-│   ├── aside.hbs
-│   ├── comments.hbs
-│   ├── footer.hbs
-│   ├── google-analytics.hbs
-│   ├── links.hbs
-│   ├── meta.hbs
-│   ├── pagination.hbs
-│   ├── search.hbs
-│   └── social.hbs
+├── partials //partial hbs views
+│   ├── aside.hbs
+│   ├── comments.hbs
+│   ├── footer.hbs
+│   ├── google-analytics.hbs
+│   ├── links.hbs
+│   ├── meta.hbs
+│   ├── pagination.hbs
+│   ├── search.hbs
+│   └── social.hbs
 ├── post.hbs
 └── tag.hbs
 ```
@@ -317,7 +355,7 @@ Putting the files in context:
 
 To bundle, minify, and compile the stylesheets and js files, we use [Gulp](http://gulpjs.com/), check `gulpfile.js` for the build tasks.
 
-### First Steps
+### Building
 
 For local development you need to have to install some core node modules and have a locally running Ghost server.
 
@@ -361,4 +399,3 @@ Edit the file `assets/scss/modules/_variables.scss`. Remember that before you de
 ### Preparing for production
 
 When you are ready and want to deploy a new version, package your code using `gulp build` command, that will minify and concatenate all the necessary code.
-
