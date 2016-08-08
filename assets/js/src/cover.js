@@ -23,12 +23,8 @@ $(function() {
         // Toggles the current page between the cover and the current page
         if ($cover.hasClass("expanded")) {
             CaffeineTheme.close();
-            $(window).on('scroll.cover', function(){
-                _expandCover();
-            })
         } else {
             CaffeineTheme.open();
-            $(window).off('scroll.cover');
         }
     };
 
