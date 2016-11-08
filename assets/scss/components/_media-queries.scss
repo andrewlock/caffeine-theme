@@ -239,6 +239,9 @@
         .material-cover {
             margin-bottom: 0;
         }
+        .sponsor { 
+            padding: 10px 20px 40px;
+        }
 
         .post-related,
         .post-card {
@@ -247,7 +250,9 @@
             .post-container {
                 padding: 20px;
             }
-
+        }
+        .post-card {
+            margin: -80px 0 0;
         }
 
         &.newer,

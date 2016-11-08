@@ -40,6 +40,7 @@ src = {
         ],
         main: [
             "assets/js/src/__init.js",
+            "assets/js/src/sponsorship.js",
             "assets/js/src/main.js",
             "assets/js/src/cover.js",
             "assets/js/src/search.js"

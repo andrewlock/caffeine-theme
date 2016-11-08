@@ -58,6 +58,35 @@
     .post-container {
         padding: 20px 60px;
     }
+
+    .sponsor{
+        padding: 10px 80px;
+        background: $sponsorship-color;
+        font-size: 0.9em;
+        box-shadow: 0 2px 6px rgba(0,0,0,.16),0 2px 6px rgba(0,0,0,.23);
+        text-align: left;
+        
+        p {
+            margin: 0;
+        }
+
+        a {
+            color: #333;
+
+            img {
+                vertical-align: middle;
+            }
+
+            span strong {
+                color: $primary-color;
+                transition: all .5s;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
 }
 
 
