@@ -7,5 +7,6 @@
         ga('create', window.ga_id, 'auto');
         ga('require', 'linkid', 'linkid.js');
         ga('send', 'pageview');
+        window.trackOutLink=function(a){ga("send","event","outbound","click",a,{transport:"beacon"})};
     }
 </script>
