@@ -4,6 +4,7 @@ $(function () {
     if (window.sponsorHtml && window.sponsorUrl) {
         var $post = $('.post-card'),
             $list = $('.posts');
+        window.sponsoredByHeader = window.sponsoredByHeader || '<strong>Sponsored&nbsp;By: </strong>';
 
         if ($post.length) {
             var postTemplate = '<div class="sponsor"><p><a href="'
@@ -17,7 +18,7 @@ $(function () {
             }
 
             postTemplate +=
-                '><strong>Sponsored&nbsp;By: </strong><span>'
+                '>' + window.sponsoredByHeader + '<span>'
                 + sponsorHtml
                 + '</span>&nbsp;<i class="fa fa-external-link"></i></a></p></div>';
 
@@ -36,7 +37,7 @@ $(function () {
             }
 
             listTemplate +=
-                '><div class="card-content"><strong>Sponsored&nbsp;By: </strong><span>'
+                '><div class="card-content">' + window.sponsoredByHeader + '<span>'
                 + sponsorHtml
                 + '</span></div></a></div></div></li>';
             $list.prepend(listTemplate);
