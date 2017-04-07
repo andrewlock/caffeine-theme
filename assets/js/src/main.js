@@ -29,9 +29,10 @@ $(function() {
 
     // Dynamically generate tags in tags overlay
     if (window.tag_names) {
+        var fragment = CaffeineTheme.getOpenHashFragment();
         for (var i = 0; i < window.tag_names.length; i++) {
             var tag = window.tag_names[i],
-                link = "/tag/" + tag + "/" + CaffeineTheme.getOpenHashFragment();
+                link = "/tag/" + tag.replace('.','-').replace(' ', '-').toLowerCase() + "/" + fragment;
 
             $("<a>", {
                 "href": link,
