@@ -32,11 +32,11 @@ $(function() {
         var fragment = CaffeineTheme.getOpenHashFragment();
         for (var i = 0; i < window.tag_names.length; i++) {
             var tag = window.tag_names[i],
-                link = "/tag/" + tag.replace('.','-').replace(' ', '-').toLowerCase() + "/" + fragment;
-
+                link = "/tag/" + (typeof tag === 'string' ? tag : tag.value).replace(/[\.\s]/g,'-').toLowerCase() + "/" + fragment,
+                tagText = (typeof tag === 'string' ? tag : tag.name);
             $("<a>", {
                 "href": link,
-                "text": tag
+                "text": tagText
             }).appendTo("#popular-tags .tags");
         }
     }
