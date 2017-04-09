@@ -15,6 +15,10 @@
     .container-wrapper {
         max-width: $container-large-width;
     }
+    .tags-container {
+        max-width: $container-large-width;
+        margin: 0 auto;
+    }
 }
 
 // ------------------------------
