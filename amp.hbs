@@ -46,11 +46,9 @@
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
                     <p class="author">
-                    {{#author}}
-                        by <a href="{{url}}">{{name}}</a> |
-                    {{/author}}
                     <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
                     </p>
+                    <p><span class="tags">{{tags separator=" "}}</span></p>
                 </section>
             </header>
             {{#if image}}

@@ -5,6 +5,7 @@
 @import 'bourbon-custom.scss';
 @import 'modules/mixins.scss';
 @import 'modules/variables.scss';
+@import 'modules/effects.scss';
 
 /* ==========================================================================
     Table of Contents
@@ -826,4 +827,20 @@ select {
     display: block;
     float: left;
     width: 45%;
+}
+
+.tags {
+    a {
+        @extend .animated;
+
+        padding: 2px 4px;
+        font-size: 8px;
+        text-transform: uppercase;
+        color: $gray-lightest;
+        border-radius: 4px;
+        background-color: rgba($primary-color, .7);
+        &:hover {
+            background-color: rgba($primary-color, 1);
+        }
+    }
 }
