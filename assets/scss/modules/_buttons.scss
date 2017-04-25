@@ -53,6 +53,12 @@ img,
 
     .card-content {
         padding: 10px 30px 20px;
+
+        h2 {
+            -ms-word-break: break-word;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
     }
 
     .card-footer {
