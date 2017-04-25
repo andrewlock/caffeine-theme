@@ -214,6 +214,9 @@
 }
 
 #post-title {
+    -ms-word-break: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
     margin: 30px 0 10px;
 
     i {

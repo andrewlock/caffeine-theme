@@ -46,6 +46,9 @@
     #post-title {
         margin-top: 60px;
         margin-bottom: 0;
+        -ms-word-break: break-word;
+        word-break: break-word;
+        word-wrap: break-word;
     }
 
     .post-header {
@@ -69,6 +72,8 @@
     #post-title {
         margin-top: 20px;
         margin-bottom: 40px;
+        -ms-word-break: break-word;
+        word-break: break-word;
     }
 }
 
